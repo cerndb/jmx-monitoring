@@ -1,0 +1,4 @@
+monitorRole   readonly
+controlRole   readwrite \
+              create com.sun.management.*,com.oracle.jrockit.* \
+              unregister
