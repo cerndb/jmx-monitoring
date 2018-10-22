@@ -49,6 +49,10 @@ For JMX connection you need to specify first what kind of authentication method 
 * **Basic** for this type of authentication you need to set "com.sun.management.jmxremote.authenticate" to *"true"* and comment out the "access.file" and "password.file" lines in the "management.properties" file. Update the enabled file's content for the values which you want to use for username and password plus match the roles with the usernames.
 * **LDAP** for this type of authentication you need to enable LDAP login module configuration file in the "setenv.sh" ("java.security.auth.login.config" attribute), set "com.sun.management.jmxremote.authenticate" to *"true"* and comment out the "access.file" and "login.config" (since you can have multiple login modules listed in the LDAP login config file with this attribute you have to specify which block of login settings you want to be active). 
 
+You will find 2 LDAP login module examples under the "jmx_access" folder. 
+* "single_role_check.config" contains only one required LDAP query check
+* "multi_role_check.config" contains two different checks. If the first one failes it tries query the second.
+
 <a name="jmx_with_ssl"/>
 
 ## JMX with SSL 
